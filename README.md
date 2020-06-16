@@ -8,8 +8,8 @@ I'm not responsible for your actions
 
 
 
-# Compile
-=======================================================
-compile the source code with gcc 
-compile the encryptor with gcc -mwindows encryptor.c -o encryptor.exe
+# Compile   
+=======================================================   
+compile the source code with gcc   
+compile the encryptor with gcc -mwindows encryptor.c -o encryptor.exe   
 
