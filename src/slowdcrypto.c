@@ -147,7 +147,7 @@ int main(){
     get_drives();
 
     for (int i = 0; *drives[i] != '\0'; i++){
-        printf("[*]Scanning %s", drives[i]);
+        printf("[*]Scanning %s\n", drives[i]);
         get_file(drives[i]);
     }
 

